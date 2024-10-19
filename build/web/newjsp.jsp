@@ -5,6 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="jakarta.servlet.http.*, jakarta.servlet.*" %>
+<%
+     session = request.getSession(false);
+    if (session == null || session.getAttribute("username") == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,11 +44,11 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Catalogos
             </a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="newjsp.jsp">Registro de Catedraticos</a>
-              <a class="dropdown-item" href="index.html">Registro de Estudiantes</a>
+              <a class="dropdown-item" href="estudiantes.jsp">Registro de Estudiantes</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>

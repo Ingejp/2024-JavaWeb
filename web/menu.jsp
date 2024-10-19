@@ -46,11 +46,11 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Catalogos
             </a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="newjsp.jsp">Registro de Catedraticos</a>
-              <a class="dropdown-item" href="index.html">Registro de Estudiantes</a>
+              <a class="dropdown-item" href="estudiantes.jsp">Registro de Estudiantes</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>

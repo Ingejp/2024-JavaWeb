@@ -1,18 +1,10 @@
 <%-- 
-    Document   : newjsp
-    Created on : 12 oct 2024, 8:30:41
+    Document   : estudiantes
+    Created on : 19 oct 2024, 10:50:35
     Author     : JP
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="jakarta.servlet.http.*, jakarta.servlet.*" %>
-<%
-     session = request.getSession(false);
-    if (session == null || session.getAttribute("username") == null) {
-        response.sendRedirect("login.jsp");
-        return;
-    }
-%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,9 +18,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     </head>
-    <body>
-       
-         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <body>       
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="menu.jsp">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -62,40 +53,37 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
-    </nav>  
-         <div class="d-flex justify-content-around">
+    </nav>    
+    
+    
+    <div class="d-flex justify-content-around">
         <div class="p-3 bd-highlight">
-        <h1>Formulario de Registro de Catedráticos</h1>
+        <h1>Formulario de Registro de Estudiantes</h1>
         <a href="NewServlet" > Click aqui </a><br><br>
         <form method="POST" id="form" name="form" action="NewServlet" >
             <div class="form-group">
-                <label for="exampleInputName">Codigo Catedrático</label>
+                <label for="exampleInputName">Codigo</label>
                 <input class="form-control" type="text" placeholder="ingresar codigo" name="codigo" id="codigo" >
                 <input type="hidden" id="control" name="control" value="GUARDAR">
             </div>
             <div class="form-group">
-                <label for="exampleInputName">Nombre del Catedrático</label>
+                <label for="exampleInputName">Nombre del alumno</label>
                 <input class="form-control" type="text" placeholder="ingresar nombre" name="nombre" id="nombre" >
             </div>
             <div class="form-group">
-                <label for="exampleInputName">Colegiado</label>
-                <input class="form-control" type="text" placeholder="ingresar nombre" name="nombre" id="nombre" >
-            </div>
-            <div class="form-group">
-                <label for="exampleInputName">Profesion</label>
-                <input class="form-control" type="text" placeholder="ingresar nombre" name="nombre" id="nombre" >
-            </div>
-            <div class="form-group">
-                <label for="exampleInputName">Telefono</label>
-                <input class="form-control" type="text" placeholder="ingresar nombre" name="nombre" id="nombre" >
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Correo</label>
+              <label for="exampleInputEmail1">Email address</label>
               <input type="email" class="form-control"  aria-describedby="emailHelp" name="correo" id="correo"  >
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Direccion</label>
+              <input type="text" class="form-control"  name="direccion" id="direccion"  >
+            </div>
             
-            <br>
+            <select class="form-control" name="genero">
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+            </select><br>
             <button type="submit" class="btn btn-primary">Guardar</button>
             <button type="button" onclick="enviarFormularioOpcion2()" class="btn btn-success">Guardar con JS</button>
              <button type="button" onclick="limpiarTabla()" class="btn btn-danger">Cancelar</button>
@@ -108,11 +96,12 @@
                 <table class="table table-striped table-hover" id="tabla1">
                     <thead class="table-dark">
                         <tr>
-                            <td>Codigo de Catedrático</td>
-                            <td>Nombre del Catedrático</td>
-                            <td>Colegiado</td>
-                            <td>Profesion</td>
+                            <td>Codigo de Estudiante</td>
+                            <td>Nombre del Estudiante</td>
+                            <td>Dirección</td>
                             <td>Correo Institucional</td>
+                            <td>Tipo</td>
+                            <td>Acción</td>
                         </tr>
                     </thead>
                     <tbody id="bodyTable">

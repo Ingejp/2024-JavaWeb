@@ -21,7 +21,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Catalogos
             </a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="newjsp.jsp">Registro de Catedraticos</a>
