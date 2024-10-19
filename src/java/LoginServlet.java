@@ -23,7 +23,6 @@ import java.sql.SQLException;
  */
 @WebServlet(urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
-private static final long serialVersionUID = 1L;
 private Connection conexion;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

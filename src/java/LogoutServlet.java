@@ -18,7 +18,6 @@ import jakarta.servlet.http.HttpSession;
  */
 @WebServlet(urlPatterns = {"/LogoutServlet"})
 public class LogoutServlet extends HttpServlet {
-private static final long serialVersionUID = 1L;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
